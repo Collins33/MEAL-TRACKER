@@ -19,4 +19,9 @@ class Reflection {
         this.reflections.push(newReflection);
         return newReflection
     }
+
+    // find one reflection
+    findOne(id){
+        return this.reflections.find(reflect => reflect.id === id);
+    }
 }
