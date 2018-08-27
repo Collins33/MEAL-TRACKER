@@ -15,7 +15,7 @@ app.post('/api/v1/reflections', Reflection.create);
 app.get('/api/v1/reflections', Reflection.getAll);
 app.get('/api/v1/reflection/:id', Reflection.getOne);
 app.put('/api/v1/reflection/:id', Reflection.update);
-app.delete('/api/v1/reflection/:id', Reflection.deleteReflection);
+app.delete('/api/v1/reflection/:id', Reflection.delete);
 
 app.listen(3000)
 console.log('app running on port ', 3000)

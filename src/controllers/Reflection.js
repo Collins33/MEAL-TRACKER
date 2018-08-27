@@ -34,7 +34,7 @@ const Reflections = {
         return res.status(200).send(updatedReflection)
     },
 
-    deleteReflection(req, res){
+    delete(req, res){
         const id = req.params.id;
         const reflection = Reflection.findOne(id);
         if (!reflection){
