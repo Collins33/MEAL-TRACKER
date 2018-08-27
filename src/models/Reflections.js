@@ -29,4 +29,15 @@ class Reflection {
     findAll(){
         return this.reflections;
     }
+
+    // update a reflections
+    updateReflection(id, data){
+        const reflection = this.findOne(id)
+        const index = this.reflections.indexOf(reflection);
+        this.reflections[index].success = data['success'] || reflection.success;
+        this.reflections[index].lowPoint = data['lowPoint'] || reflection.lowPoint;
+        this.reflections[index].takeAway = data['takeAway'] || reflection.takeAway;
+        this.reflections[index].modifiedDate = moment.now()
+        return this.reflections[index];
+    }
 }
