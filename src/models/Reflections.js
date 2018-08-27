@@ -24,4 +24,9 @@ class Reflection {
     findOne(id){
         return this.reflections.find(reflect => reflect.id === id);
     }
+
+    // find all reflections
+    findAll(){
+        return this.reflections;
+    }
 }
