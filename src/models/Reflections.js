@@ -40,4 +40,14 @@ class Reflection {
         this.reflections[index].modifiedDate = moment.now()
         return this.reflections[index];
     }
+
+    // delete a reflection
+    delete(id){
+        const reflect = this.findOne(id);
+        const index = this.reflections.indexOf(reflection);
+        this.reflections.splice(index, 1);
+        return {};
+    }
 }
+
+export default new Reflection;
