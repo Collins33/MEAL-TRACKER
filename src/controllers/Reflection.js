@@ -1,6 +1,6 @@
 import Reflection from '../models/Reflections';
 
-const Reflection = {
+const Reflections = {
     create(req, res){
         if(!req.body.success && !req.body.lowpoint && !req.body.takeAway){
             return res.status(400).send({'message':'all fields must be present'})
@@ -44,4 +44,5 @@ const Reflection = {
         return res.status(204).send({'message':'successfully deleted reflection'});
     }
 }
-export default Reflection;
+
+export default Reflections;

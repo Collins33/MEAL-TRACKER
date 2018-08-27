@@ -1,4 +1,5 @@
 import express from 'express';
+import Reflection from './src/controllers/Reflection';
 // instance of express
 const app = express();
 // middleware to access request data
@@ -8,6 +9,13 @@ app.use(express.json())
 app.get('/', (req,res) =>{
     return res.status(200).send({'message':'I am working'});
 });
+
+// define the endpoints
+app.post('/api/v1/reflections', Reflection.create);
+app.get('/api/v1/reflections', Reflection.getAll);
+app.get('/api/v1/reflection/:id', Reflection.getOne);
+app.put('/api/v1/reflection/:id', Reflection.update);
+app.delete('/api/v1/reflection/:id', Reflection.deleteReflection);
 
 app.listen(3000)
 console.log('app running on port ', 3000)
